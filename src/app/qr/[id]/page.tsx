@@ -26,7 +26,7 @@ function QrCodeIdPage() {
     );
   });
 
-    const getQrcodeData = async () => {
+    const getQrCodeData = async () => {
         const q = query(collection(db, 'qr-codes'), where('id', '==', params.id))
         const snap = await getDocs(q)
         const results = snap.docs.map(d=>d.data())
@@ -53,7 +53,7 @@ console.log(d); // ได้ ~7 เมตร (ถูกต้อง)
     }
 
     useEffect(() => {
-      getQrcodeData()
+      getQrCodeData()
       
     
       return () => {

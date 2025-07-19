@@ -20,11 +20,16 @@ export default function CreateQR() {
   const [location, setLocation] = useState<{ lat: number; lon: number } | null>(null);
   const [qrId, setQrId] = useState<string>("");
   const [saved, setSaved] = useState<boolean>(false);
+  const [url, setUrl] = useState('')
 
   useEffect(() => {
     getLocation()
       .then(setLocation)
       .catch(() => alert("กรุณาเปิด location"));
+    
+      if(typeof window !== "undefined"){
+        setUrl(window.location.hostname)
+      }
   }, []);
 
   const handleGenerate = async () => {
@@ -49,7 +54,7 @@ export default function CreateQR() {
         {qrId && location && (
           <div className="text-center justify-center flex">
             <QRCodeCanvas
-              value={`http://localhost:3000/qr/${qrId}`}
+              value={`${url}/qr/${qrId}`}
               size={220}
             />
           </div>
