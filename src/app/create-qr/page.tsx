@@ -28,7 +28,7 @@ export default function CreateQR() {
       .catch(() => alert("กรุณาเปิด location"));
     
       if(typeof window !== "undefined"){
-        setUrl(window.location.hostname)
+        setUrl(`https://${window.location.hostname}`)
       }
   }, []);
 
