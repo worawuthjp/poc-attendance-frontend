@@ -65,7 +65,7 @@ function QrCodeIdPage() {
   return (
     <div>
       <div>Qrcode Id: {params.id}</div>
-      <div>เช็คอินสำเร็จ ระยะห่างระหว่างจุดสร้างคิวอาร์โค๊ด {output} เมตร</div>
+      <div>เช็คอินสำเร็จ ระยะห่างระหว่างจุดสร้างคิวอาร์โค๊ด {output} เมตร </div>
     </div>
   );
 }
