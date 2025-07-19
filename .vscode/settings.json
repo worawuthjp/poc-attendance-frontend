@@ -1,0 +1,35 @@
+{
+    "i18n-ally.localesPaths": [
+        "messages"
+    ],
+    // Enable format on save (Prettier จะทำงานตอนเซฟ)
+    "editor.formatOnSave": true,
+    // ตั้งค่าให้รัน code actions บางอย่างตอนเซฟ (organize imports, fix ESLint)
+    "editor.codeActionsOnSave": {
+        // จัดเรียงและลบ import ที่ใช้ไม่แล้วใน TypeScript/JS
+        "source.organizeImports": "always",
+        // ให้ ESLint ลองแก้ไข (fix) ข้อผิดพลาดอัตโนมัติ ถ้ามี rule ที่รองรับการ fix ได้
+        "source.fixAll.eslint": "always",
+        "source.addMissingImports": "always"
+    },
+    // บอก VS Code ให้ใช้ ESLint กับไฟล์เหล่านี้ (ถ้าใช้ .js/.jsx/.ts/.tsx)
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    // รัน ESLint เมื่อกด Save
+    "eslint.run": "onSave",
+    // ตั้ง Prettier เป็น default formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // ถ้าต้องการบังคับให้มีไฟล์ config ของ Prettier (เช่น .prettierrc) ในโปรเจกต์
+    "prettier.requireConfig": true,
+    // เปิดฟีเจอร์ Auto Import ของ TypeScript
+    "typescript.suggest.autoImports": true,
+    "javascript.suggest.autoImports": true,
+    // (ถ้าใช้ TS/JS) เมื่อย้าย/rename ไฟล์ ให้ VS Code อัปเดต import path ให้เลย
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "i18n-ally.keystyle": "nested"
+}
